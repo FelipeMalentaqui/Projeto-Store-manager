@@ -30,8 +30,22 @@ const create = async (req, res) => {
   return res.status(201).json({ id: message, name });
 };
 
+const update = async (req, res) => {
+  const name = req.body;
+  const { id } = req.params;
+
+  const { type, message } = await productsService.update(name, id);
+
+  if (type) return res.status(mapError(type)).json({ message });
+  // console.log(newProduct, 'new'); // { name: 'Martelo do Batman', id: '1' } new
+  // console.log(name, id, 'name id'); // { name: 'Martelo do Batman' } 1 name id
+
+  return res.status(201).json(message);
+};
+
 module.exports = {
   getAll,
   findById,
   create,
+  update,
 };
