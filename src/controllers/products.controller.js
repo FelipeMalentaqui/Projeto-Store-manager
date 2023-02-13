@@ -23,7 +23,7 @@ const findById = async (req, res) => {
 
 const create = async (req, res) => {
   const { name } = req.body;
-  const { type, message } = await productsService.create(name);
+  const { type, message } = await productsService.create({ name });
 
   if (type) return res.status(mapError(type)).json({ message });
 
