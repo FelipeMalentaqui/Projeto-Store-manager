@@ -8,12 +8,12 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-13T18:32:15.165Z",
-    "modified": "2023-02-13T23:32:51.344Z",
+    "modified": "2023-02-13T23:37:26.482Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n\"name\": \"meu amigo robo\"\n}",
+      "raw": "{\n\"name\": \"meu amigo robo22\"\n}",
       "form": []
     },
     "tests": []
@@ -65,9 +65,14 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-13T18:45:27.444Z",
-    "modified": "2023-02-13T18:45:27.444Z",
+    "modified": "2023-02-13T23:48:06.263Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\"name\": \"meu amigo robo22\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -306,12 +311,12 @@
     "method": "PUT",
     "sortNum": 0,
     "created": "2023-02-13T22:59:10.836Z",
-    "modified": "2023-02-13T23:32:46.508Z",
+    "modified": "2023-02-13T23:37:03.752Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n\"name\": \"meu amigo robo\"\n}",
+      "raw": "{\n\"name\": \"meu amigo robo22\"\n}",
       "form": []
     },
     "tests": []
@@ -369,6 +374,63 @@
     "body": {
       "type": "json",
       "raw": "{\n\"name\": \"meu amigo robo\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "1da9b4e6-faed-43f2-8eb4-169e09cc959d",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/2",
+    "url": "http://localhost:3000/products/2",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-02-13T23:46:31.215Z",
+    "modified": "2023-02-13T23:46:31.215Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\"name\": \"meu amigo robo22\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "3d1c4e25-f26f-4dde-b37a-aee437a55242",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/3",
+    "url": "http://localhost:3000/products/3",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-02-13T23:47:14.248Z",
+    "modified": "2023-02-13T23:47:14.248Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\"name\": \"meu amigo robo22\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a6ad4a8e-727d-4af9-80ac-8a7357fe1b76",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-02-13T23:48:17.604Z",
+    "modified": "2023-02-13T23:48:17.604Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\"name\": \"meu amigo robo22\"\n}",
       "form": []
     },
     "tests": []

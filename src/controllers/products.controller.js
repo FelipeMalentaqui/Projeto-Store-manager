@@ -37,10 +37,18 @@ const update = async (req, res) => {
   const { type, message } = await productsService.update(name, id);
 
   if (type) return res.status(mapError(type)).json({ message });
-  // console.log(newProduct, 'new'); // { name: 'Martelo do Batman', id: '1' } new
-  // console.log(name, id, 'name id'); // { name: 'Martelo do Batman' } 1 name id
 
-  return res.status(201).json(message);
+  return res.status(200).json(message);
+};
+
+const destroy = async (req, res) => {
+  const { id } = req.params;
+  
+  const { type, message } = await productsService.destroy(id);
+
+  if (type) return res.status(mapError(type)).json({ message });
+
+  return res.status(204).json(message);
 };
 
 module.exports = {
@@ -48,4 +56,5 @@ module.exports = {
   findById,
   create,
   update,
+  destroy,
 };
