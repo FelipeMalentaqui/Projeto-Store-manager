@@ -1,6 +1,8 @@
 const { productsModel } = require('../models');
 const { validateNameProduct } = require('./validations/validateInputsValue');
 
+const ERRO_NOT = 'Product not found';
+
 const getAll = async () => {
   const responseModel = await productsModel.getAll();
 
@@ -13,7 +15,7 @@ const findById = async (id) => {
   
   // console.log(responseModel, 'response da model');
   
-  if (!responseModel) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  if (!responseModel) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
 
   return { type: null, message: responseModel };
 };
@@ -23,8 +25,6 @@ const create = async (name) => {
   if (error.type) return error;
 
   const responseModel = await productsModel.create(name);
-
-  // if (!responseModel) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
   
   return { type: null, message: responseModel };
 };
@@ -36,11 +36,11 @@ const update = async (name, id) => {
   
   const existId = await productsModel.findById(id);
   console.log(existId, 'id'); // BinaryRow { id: 2, name: 'Traje de encolhimento' }
-  if (existId === undefined) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
-   if (name === undefined) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  if (existId === undefined) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
+   if (name === undefined) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
   
   const resultUpdate = await productsModel.update(name, id);
-  if (!resultUpdate) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  if (!resultUpdate) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
   console.log(name, id, 'service2');
   return { type: null, message: { id, name } };
 };
