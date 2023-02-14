@@ -1,5 +1,6 @@
 const errorM = {
   PRODUCT_NOT_FOUND: 404,
+  SALE_NOT_FOUND: 404,
   INVALID_NAME: 422,
 };
 

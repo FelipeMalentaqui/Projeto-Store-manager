@@ -30,14 +30,19 @@ const create = async (name) => {
 };
 
 const update = async (name, id) => {
+  const error = validateNameProduct(name);
+  if (error.type) return error;
+  console.log(name, id, 'service'); // ProdutoX 2 service
+  
   const existId = await productsModel.findById(id);
-
-  if (!existId) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
-
-  await productsModel.update(name, id);
-  // console.log(name, id, 'service'); // { name: 'Martelo do Batman' } 1
-
-  return { type: null, message: { ...name, id } };
+  console.log(existId, 'id'); // BinaryRow { id: 2, name: 'Traje de encolhimento' }
+  if (existId === undefined) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+   if (name === undefined) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  
+  const resultUpdate = await productsModel.update(name, id);
+  if (!resultUpdate) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  console.log(name, id, 'service2');
+  return { type: null, message: { id, name } };
 };
 
 const destroy = async (id) => {

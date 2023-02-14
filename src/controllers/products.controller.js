@@ -31,14 +31,14 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  const name = req.body;
+  const { name } = req.body;
   const { id } = req.params;
 
-  const { type, message } = await productsService.update(name, id);
+  const { type, message } = await productsService.update({ name }, id);
 
   if (type) return res.status(mapError(type)).json({ message });
 
-  return res.status(200).json(message);
+  return res.status(200).json({ id: message.id, ...message.name });
 };
 
 const destroy = async (req, res) => {

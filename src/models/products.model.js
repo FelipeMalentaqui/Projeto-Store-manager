@@ -24,6 +24,7 @@ const create = async ({ name }) => {
 };
 
 const update = async (name, id) => {
+  console.log(name, id, 'model');
   const [{ affectedRows }] = await connection.execute(
     'UPDATE StoreManager.products SET name = ? WHERE id = ?',
     [name.name, id],
