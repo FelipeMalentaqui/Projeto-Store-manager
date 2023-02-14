@@ -25,6 +25,7 @@ const create = async (name) => {
   if (error.type) return error;
 
   const responseModel = await productsModel.create(name);
+  console.log(responseModel, 'service');
   
   return { type: null, message: responseModel };
 };
@@ -32,16 +33,15 @@ const create = async (name) => {
 const update = async (name, id) => {
   const error = validateNameProduct(name);
   if (error.type) return error;
-  console.log(name, id, 'service'); // ProdutoX 2 service
   
-  const existId = await productsModel.findById(id);
-  console.log(existId, 'id'); // BinaryRow { id: 2, name: 'Traje de encolhimento' }
-  if (existId === undefined) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
-   if (name === undefined) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
+  // const existId = await productsModel.findById(id);
+
+  // if (existId === undefined) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
+  //  if (name === undefined) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
   
   const resultUpdate = await productsModel.update(name, id);
   if (!resultUpdate) return { type: 'PRODUCT_NOT_FOUND', message: ERRO_NOT };
-  console.log(name, id, 'service2');
+
   return { type: null, message: { id, name } };
 };
 

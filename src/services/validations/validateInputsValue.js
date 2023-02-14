@@ -2,7 +2,7 @@ const { validateNameProductSchema, validateProductsSchema } = require('./schema'
 
 const validateNameProduct = (name) => {
   const { error } = validateNameProductSchema.validate(name);
-  console.log(error, 'validate');
+  // console.log(error, 'validate');
 
   if (error) return { type: 'INVALID_NAME', message: error.message };
 
