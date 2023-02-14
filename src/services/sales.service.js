@@ -1,5 +1,5 @@
 const { salesModel } = require('../models');
-const { validateProducts } = require('./validations/validateInputsValue');
+// const { validateProducts } = require('./validations/validateInputsValue');
 
 const getAll = async () => {
   const responseModel = await salesModel.getAll();
@@ -24,8 +24,8 @@ const findById = async (id) => {
 //   BinaryRow { id: 2, date: 2023-02-14T14:46:55.000Z }
 // ] resposta da model sales
 
-  const newReturn = await responseModel.filter(async (ele) => ele.saleId !== ele.saleId);
-  console.log(newReturn, 'filter');
+  // const newReturn = await responseModel.filter(async (ele) => ele.saleId !== ele.saleId);
+  // console.log(newReturn, 'filter');
 
   return { type: null, message: { responseModelSales, responseModel } };
 };
