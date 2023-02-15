@@ -16,7 +16,8 @@ const idMock = [
 
 const invalideNameString = { id: 1, name: 'X' };
 const invalideNameNumber = { id: 1, name: 2 };
-const valideName = 'ProdutoX'
+const valideName = "ProdutoX";
+const validateNameNot = "P"
 
 module.exports = {
   productMock,
@@ -25,4 +26,5 @@ module.exports = {
   invalideNameString,
   invalideNameNumber,
   valideName,
+  validateNameNot,
 };

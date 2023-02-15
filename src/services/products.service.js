@@ -25,7 +25,6 @@ const create = async (name) => {
   if (error.type) return error;
 
   const responseModel = await productsModel.create(name);
-  console.log(responseModel, 'service');
   
   return { type: null, message: responseModel };
 };
