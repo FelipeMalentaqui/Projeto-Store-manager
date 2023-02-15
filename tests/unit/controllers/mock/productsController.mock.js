@@ -10,11 +10,18 @@ const newProduct = [{
   name: "ProdutoX"
 }];
 
-const idMock = [{
+const idMock = {
   id: 1,
-  name: 'Martelo de Thor'
-}];
+  name: "ProdutoX"
+};
+
+const name = "ProdutoX";
+
+
 
 module.exports = {
   productMock,
+  newProduct,
+  idMock,
+  name,
 }

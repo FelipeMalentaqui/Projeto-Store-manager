@@ -21,6 +21,7 @@ const findById = async (id) => {
 };
 
 const create = async (name) => {
+  // console.log(name, 'name'); RETORNA EM UM OBJETO
   const error = validateNameProduct(name);
   if (error.type) return error;
 

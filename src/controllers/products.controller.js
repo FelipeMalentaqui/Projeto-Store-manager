@@ -23,10 +23,12 @@ const findById = async (req, res) => {
 
 const create = async (req, res) => {
   const { name } = req.body;
+  // console.log(name, 'aa'); RETORNA UMA STRING
   const { type, message } = await productsService.create({ name });
 
   if (type) return res.status(mapError(type)).json({ message });
-
+  console.log(message, 'message');
+  console.log(name, 'namee');
   return res.status(201).json({ id: message, name });
 };
 
