@@ -27,8 +27,7 @@ const create = async (req, res) => {
   const { type, message } = await productsService.create({ name });
 
   if (type) return res.status(mapError(type)).json({ message });
-  console.log(message, 'message');
-  console.log(name, 'namee');
+  
   return res.status(201).json({ id: message, name });
 };
 

@@ -93,21 +93,21 @@ describe('Testando camada Controller', function () {
     });
   });
 
-  describe('Testando update', function () {
-    afterEach(() => {
-      sinon.restore();
-    });
-    it('', function () {
+  // describe('Testando update', function () {
+  //   afterEach(() => {
+  //     sinon.restore();
+  //   });
+  //   it('', function () {
 
-    });
-  });
+  //   });
+  // });
 
-  describe('Testando destroy', function () {
-    afterEach(() => {
-      sinon.restore();
-    });
-    it('', function () {
+  // describe('Testando destroy', function () {
+  //   afterEach(() => {
+  //     sinon.restore();
+  //   });
+  //   it('', function () {
 
-    });
-  });
+  //   });
+  // });
 });
