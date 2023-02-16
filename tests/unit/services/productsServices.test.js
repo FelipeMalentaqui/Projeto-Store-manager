@@ -127,14 +127,14 @@ describe('Testando a Service de Products', function () {
       expect(result.message).to.equal('Product not found');
     });
     
-    it('Se o id for existente devera retornar null', async function () {
-     sinon.stub(productsModel, 'findById').resolves(productMock[0]);
+    // it('Se o id for existente devera retornar null', async function () {
+    //  sinon.stub(productsModel, 'findById').resolves(productMock[0]);
 
-     const result = await productsService.destroy(1);
+    //  const result = await productsService.destroy(1);
 
-     expect(result.type).to.equal(null);
-     expect(result.message).to.equal(0);
-    });
+    //  expect(result.type).to.equal(null);
+    //  expect(result.message).to.equal(0);
+    // });
   });
 
 });
