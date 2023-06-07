@@ -1,4 +1,4 @@
-// const camelize = require('camelize');
+const camelize = require('camelize');
 const connection = require('./connection');
 
 const getAll = async () => {
@@ -31,8 +31,30 @@ const findById = async (id) => {
   return result;
 };
 
+const create = async (body) => {
+  const [{ insertId }] = await connection.execute(
+    'INSERT INTO StoreManager.sales (date) VALUES(now())',
+  );
+    console.log(insertId, 'insertId');
+  body.map(async (ele) => {
+    const [result] = await connection.execute(
+      'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES(?, ?, ?)',
+      [insertId, ele.productId, ele.quantity],
+    );
+    console.log(result, 'result');
+    return camelize(result);
+  });
+  // const responsePromise = await Promise.all(arr);
+  
+  return {
+    id: insertId,
+    itemsSold: body,
+  };
+};
+
 module.exports = {
   getAll,
   getAllSales,
   findById,
+  create,
 };
